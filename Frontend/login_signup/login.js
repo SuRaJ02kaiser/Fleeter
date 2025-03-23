@@ -63,7 +63,7 @@ const logIn = async () => {
                 sessionStorage.setItem("fleeterReload", "true");
         
                 alert("Login successful!");
-                window.location.href = "/Frontend/main_page/index.html";
+                window.location.href = "/index.html";
             } else {
                 alert("Login failed: No token received.");
             }
@@ -93,7 +93,7 @@ const signUp = async () => {
         }
 
         alert("Signup successful!");
-        window.location.href = "/Frontend/login_signup/login.html";
+        window.location.href = "/login_signup/login.html";
 
     } catch (err) {
         alert(err.response?.data?.message || "Signup failed. Please try again.");

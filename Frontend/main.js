@@ -60,9 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
 const getStarted = async () => {
     const getToken = localStorage.getItem('fleeterToken');
     if(getToken){
-        window.location.href='/Frontend/driver_page/driver.html';
+        window.location.href='/driver_page/driver.html';
     } else{
-       window.location.href='/Frontend/login_signup/login.html';
+       window.location.href='/login_signup/login.html';
     }
 }
 
@@ -165,9 +165,9 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
 function takeToDrivers(){
     const getToken = localStorage.getItem('fleeterToken');
     if(getToken){
-        window.location.href='/Frontend/driver_page/driver.html';
+        window.location.href='/driver_page/driver.html';
     } else{
-       window.location.href='/Frontend/login_signup/login.html';
+       window.location.href='/login_signup/login.html';
     }
 }
 
@@ -175,9 +175,9 @@ function takeToDrivers(){
 function takeToVehicles(){
     const getToken = localStorage.getItem('fleeterToken');
     if(getToken){
-        window.location.href='/Frontend/vehicle_page/vehicle.html';
+        window.location.href='/vehicle_page/vehicle.html';
     } else{
-       window.location.href='/Frontend/login_signup/login.html';
+       window.location.href='/login_signup/login.html';
     }
 }
 
@@ -185,8 +185,8 @@ function takeToVehicles(){
 function takeToRoutes(){
     const getToken = localStorage.getItem('fleeterToken');
     if(getToken){
-        window.location.href='/Frontend/route_page/route.html';
+        window.location.href='/route_page/route.html';
     } else{
-       window.location.href='/Frontend/login_signup/login.html';
+       window.location.href='/login_signup/login.html';
     }
 }
