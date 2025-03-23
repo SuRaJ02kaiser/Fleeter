@@ -7,7 +7,7 @@ Fleeter is a fleet management system designed to streamline vehicle tracking, dr
 Full-stack Web Application
 
 ## Deployed Application
-- **Frontend:** [Fleeter Frontend](https://fleet-er.netlify.app/)
+- **Frontend:** [Fleeter Frontend](https://flee-ter.netlify.app/)
 - **Backend:** [Fleeter Backend](https://b43-web-181-web-project-176.onrender.com)
 - **Database:** MongoDB (via Mongoose)
 
