@@ -40,7 +40,7 @@ const logIn = async(req ,res) => {
 
 const getDrivers = async(req ,res) =>{
     try{
-        const drivers = await userModel.find({createdBy:req.user.userId}).populate("createdBy","username role");
+        const drivers = await userModel.find({createdBy:req.user.userId}).populate("createdBy","username");
         if(drivers.length == 0){
            return res.status(404).json("You havent registered any driver");
         }
@@ -105,5 +105,29 @@ const updateUser = async(req,res) => {
     } 
 }
 
+const getDriverByName = async (req, res) => {
+    try {
+        const name = req.body.name.toLowerCase();
 
-module.exports = {signUp,logIn,getDrivers,createDriver,deleteDriver,getUser,updateUser};
+        const drivers = await userModel.find({createdBy: req.user.userId});
+
+        if(drivers.length === 0){
+            return res.status(404).json({ message: "No drivers found for this user." });
+        }
+
+        const matchingDrivers = drivers.filter(driver => driver.username.toLowerCase() === name);
+
+        if(matchingDrivers.length === 0){
+            return res.status(404).json({ message: "Driver with this name is not available." });
+        }
+
+        res.status(200).json(matchingDrivers);
+    } catch(err){
+        console.error("Error in getDriverByName:", err);
+
+        res.status(500).json({ message: "Something went wrong.", error: err.message });
+    }
+};
+
+
+module.exports = {signUp,logIn,getDrivers,createDriver,deleteDriver,getUser,updateUser,getDriverByName};
