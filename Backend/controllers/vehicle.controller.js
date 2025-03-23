@@ -46,4 +46,64 @@ const deletevehicles = async(req ,res) => {
 }
 
 
-module.exports = {getVehicles,postVehicles,updateVehicles,deletevehicles};
+const getVehicleByName = async (req, res) => {
+    try {
+        const make = req.params.make;
+        const model = req.params.model;
+
+        const vehicles = await vehicleModel.find({
+            ownerId: req.user.userId,
+            make: { $regex: new RegExp(`^${make}$`, 'i') },
+            model: { $regex: new RegExp(`^${model}$`, 'i') }
+        });
+
+        if(vehicles.length === 0){
+            return res.status(404).json({ message: "No vehicles found with the specified make and model." });
+        }
+
+        res.status(200).json(vehicles);
+    } catch (err) {
+        console.error("Error in getVehicleByName:", err);
+        res.status(500).json({ message: "Something went wrong.", error: err.message });
+    }
+};
+
+
+const filterBystatus = async(req,res) => {
+    try{
+        const filter = req.params.status;
+        const vehicles = await vehicleModel.find({ownerId:req.user.userId,status:filter})
+        if(vehicles.length == 0){
+           return res.status(404).json(`You dont have any vehicles with ${filter} status`);
+        }
+        res.status(200).json(vehicles);
+    } catch(err){
+        res.status(500).json({message:"something went wrong", error:err.message});
+    }
+}
+
+
+const filterByMileage = async (req, res) => {
+    try {
+        const mil = parseInt(req.params.exp);
+
+        if(isNaN(mil)){
+            return res.status(400).json({ message: "Invalid mileage value. Please provide a number." });
+        }
+
+        const vehicles = await vehicleModel.find({ ownerId: req.user.userId,mileage : { $gte: exp }});
+
+        if(vehicles.length === 0){
+            return res.status(404).json({ message: "No vehicles found with the specified mileage or higher." });
+        }
+
+        res.status(200).json(vehicles);
+    } catch(err){
+        console.error("Error in filterByMileage:", err);
+        res.status(500).json({ message: "Something went wrong.", error: err.message });
+    }
+};
+
+
+
+module.exports = {getVehicles,postVehicles,updateVehicles,deletevehicles,getVehicleByName,filterBystatus,filterByMileage};
