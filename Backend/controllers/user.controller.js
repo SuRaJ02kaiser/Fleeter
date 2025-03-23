@@ -164,6 +164,5 @@ const filterByExp = async (req, res) => {
     }
 };
 
-module.exports = { filterByExp };
 
 module.exports = {signUp,logIn,getDrivers,createDriver,deleteDriver,getUser,updateUser,getDriverByName,filterBystatus,filterByExp};
