@@ -8,8 +8,6 @@ const userRouter = require("./routes/user.route");
 const vehicleRouter = require("./routes/vehicle.route");
 const routeRouter = require("./routes/route.route");
 
-app.use(cors());
-
 app.use(express.json());
 
 app.use(express.static('public'));
