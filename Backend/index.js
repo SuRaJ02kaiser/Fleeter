@@ -9,10 +9,10 @@ const vehicleRouter = require("./routes/vehicle.route");
 const routeRouter = require("./routes/route.route");
 
 app.use(cors({
-    origin: "https://fleet-er.netlify.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-  }));
+  origin: ["https://fleet-er.netlify.app", "https://flee-ter.netlify.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 app.use(express.json());
 
