@@ -85,13 +85,13 @@ const filterBystatus = async(req,res) => {
 
 const filterByMileage = async (req, res) => {
     try {
-        const mil = parseInt(req.params.exp);
+        const mil = parseInt(req.params.mileage);
 
         if(isNaN(mil)){
             return res.status(400).json({ message: "Invalid mileage value. Please provide a number." });
         }
 
-        const vehicles = await vehicleModel.find({ ownerId: req.user.userId,mileage : { $gte: exp }});
+        const vehicles = await vehicleModel.find({ ownerId: req.user.userId,mileage : { $gte: mil }});
 
         if(vehicles.length === 0){
             return res.status(404).json({ message: "No vehicles found with the specified mileage or higher." });
