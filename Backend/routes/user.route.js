@@ -1,5 +1,5 @@
 const express = require("express");
-const {signUp,logIn,getDrivers,createDriver,deleteDriver,getUser,updateUser,getDriverByName} = require("../controllers/user.controller");
+const {signUp,logIn,getDrivers,createDriver,deleteDriver,getUser,updateUser,getDriverByName,filterBystatus,filterByExp} = require("../controllers/user.controller");
 const userRouter = express.Router();
 const authMiddleware = require("../middleware/auth.middleware")
 
@@ -11,5 +11,7 @@ userRouter.post("/createDriver",authMiddleware(["manager","admin"]),createDriver
 userRouter.delete("/deleteDriver/:id",authMiddleware(["admin",'manager']),deleteDriver)//to delete a driver
 userRouter.patch("/updateDriver/:id",authMiddleware(["admin","manager"]),updateUser);//updating the user info
 userRouter.get("/getDriverByName/:name",authMiddleware(["admin","manager"]),getDriverByName)//get Driver by name
+userRouter.get("/getDriverByExp/:exp",authMiddleware(["admin","manager"]),filterByExp)//get Driver by Experience
+userRouter.get("/getDriverByStatus/:status",authMiddleware(["admin","manager"]),filterBystatus)//get Driver By status
 
 module.exports = userRouter;

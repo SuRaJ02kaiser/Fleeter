@@ -130,4 +130,40 @@ const getDriverByName = async (req, res) => {
 };
 
 
-module.exports = {signUp,logIn,getDrivers,createDriver,deleteDriver,getUser,updateUser,getDriverByName};
+const filterBystatus = async(req,res) => {
+    try{
+        const filter = req.params.status;
+        const drivers = await userModel.find({createdBy:req.user.userId,status:filter})
+        if(drivers.length == 0){
+           return res.status(404).json("You havent registered any driver");
+        }
+        res.status(200).json(drivers);
+    } catch(err){
+        res.status(500).json({message:"something went wrong", error:err.message});
+    }
+}
+
+const filterByExp = async (req, res) => {
+    try {
+        const exp = parseInt(req.params.exp);
+
+        if(isNaN(exp)){
+            return res.status(400).json({ message: "Invalid experience value. Please provide a number." });
+        }
+
+        const drivers = await userModel.find({ createdBy: req.user.userId, experience: { $gte: exp }});
+
+        if(drivers.length === 0){
+            return res.status(404).json({ message: "No drivers found with the specified experience or higher." });
+        }
+
+        res.status(200).json(drivers);
+    } catch(err){
+        console.error("Error in filterByExp:", err);
+        res.status(500).json({ message: "Something went wrong.", error: err.message });
+    }
+};
+
+module.exports = { filterByExp };
+
+module.exports = {signUp,logIn,getDrivers,createDriver,deleteDriver,getUser,updateUser,getDriverByName,filterBystatus,filterByExp};
