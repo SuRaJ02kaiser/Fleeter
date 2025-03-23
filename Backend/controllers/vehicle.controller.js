@@ -71,7 +71,7 @@ const getVehicleByName = async (req, res) => {
 
 const filterBystatus = async(req,res) => {
     try{
-        const filter = req.params.status.toloweCase();
+        const filter = req.params.status.toLowerCase();
         const vehicles = await vehicleModel.find({ownerId:req.user.userId,status:filter})
         if(vehicles.length == 0){
            return res.status(404).json(`You dont have any vehicles with ${filter} status`);
