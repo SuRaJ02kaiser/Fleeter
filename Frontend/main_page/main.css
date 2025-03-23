@@ -1,0 +1,777 @@
+:root {
+    --primary-bg: #000000fc;
+    --secondary-bg: #ffffff;
+    --primary-color: #607D41;
+    --secondary-color: #547034;
+    --button-color: #de6621fc;
+    --button-hover: #e68a08;
+    --text-dark: #333;
+    --text-light: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+header {
+    width: 100%;
+    background: var(--primary-color);
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.LOGO {
+    display: flex;
+    align-items: center; 
+}
+
+.LOGO a {
+    display: flex;
+    align-items: center; 
+    text-decoration: none; 
+}
+
+.LOGO p {
+    margin-left: 10px; 
+    color: white;
+    font-size: 30px;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.logo {
+    height: 100px;
+    top: 50px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: 22px;
+}
+
+.nav-links a:hover {
+    color: #ff7c30;
+}
+
+.login-button {
+    padding: 10px 25px;
+    margin-right: 20px;
+    background: var(--button-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.login-name{
+    padding: 10px 25px;
+    background: #4c682d;
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.login-button a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: bold;
+    display: block;
+    font-size: 17px;
+}
+
+.login-button:hover {
+    background: var(--button-hover);
+}
+
+.ham-login-button,.ham-logout-button {
+    display: none;
+}
+
+.ham-login-name {
+    display: none;
+    visibility: hidden;
+}
+
+.login-name {
+    display: none
+}
+
+
+.logout-button {
+    padding: 10px 25px;
+    margin-right: 10px;
+    background: var(--button-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.logout-button:hover {
+    background: var(--button-hover);
+}
+
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('https://social-innovation.hitachi/en-us/think-ahead/transportation/rule-the-road/-/media/project/hitachi/sib/en-us/image/new-section/rule-the-road-gif.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+}
+
+.hero h1,
+.hero p,
+.hero button {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: var(--text-light); 
+    line-height: 1.8;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: var(--button-color);
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+.hero button:hover {
+    background: var(--button-hover);
+}
+
+.section-animate {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.section-animate.visible {
+    opacity:1;
+    transform: translateY(0);
+}
+
+section {
+    width: 100%;
+    padding: 70px 20px;
+    text-align: center;
+    background: var(--secondary-bg);
+    color: var(--text-dark);
+}
+
+.features {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    background: var(--secondary-bg);
+    padding: 30px;
+    border-radius: 15px;
+    color: var(--text-light);
+    font-size: 1rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    width: 300px;
+}
+
+.feature-item:hover{
+    cursor: pointer;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--button-color);
+}
+
+.feature-item h3 {
+    color:var(--text-dark);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-item p {
+    color: black;
+    font-size: 1rem;
+    line-height: 1.6;
+    color:var(--text-dark);
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.about {
+    position: relative; 
+    background-image: url('https://wallpapercave.com/wp/wp9349063.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-dark);
+    padding: 80px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); 
+    z-index: 1;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    position: relative; 
+    z-index: 2;
+}
+
+.about .tagline {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 40px;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    position: relative; 
+    z-index: 2;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.testimonials {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.testimonial-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.testimonial-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.profile-icon {
+    font-size: 3rem;
+    color: var(--button-color);
+    margin-bottom: 15px;
+}
+
+.testimonial-item .name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.testimonial-item .quote {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+
+.contact {
+    position: relative;
+    color: #000000;
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #85D3D4;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: left; 
+    margin-top: 60px;
+}
+
+.contact-info h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #000000;
+}
+
+.contact-info p {
+    color: #000000;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-circle i {
+    color: white;
+    font-size: 18px;
+}
+
+.contact-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #000000; 
+}
+
+.contact-item p {
+    color: #050000;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.form-header p {
+    color: #65c53f;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    text-align: left; 
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #65c53f;
+    box-shadow: 0 0 0 2px rgba(101, 197, 63, 0.2);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn-container {
+    position: relative;
+    text-align: center; 
+}
+
+.btn {
+    background-color: #65c53f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #377f17;
+}
+
+
+footer {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 80px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.footer-section ul li a:hover {
+    color: var(--button-color);
+    text-decoration: underline;
+}
+
+.contact-info {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.icons i {
+    font-size: 25px;
+    margin: 20px 10px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .icons i:hover {
+    color: white;
+  }
+  
+  .bottomLeft {
+    font-size: 15px;
+    color: black;
+  }
+  
+  .bottomLeft a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white
+  }
+  
+  .bottomLeft a:hover {
+    text-decoration: underline;
+    color: var(--button-color);
+  }
+
+  @media (max-width: 950px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        height: 80px;
+    }
+    
+    .LOGO p {
+        margin-left: 10px; 
+        color: white;
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background: var(--primary-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger div {
+        width: 100%;
+        height: 3px;
+        background: var(--text-light);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .login-button, .logout-button {
+        display: none !important;
+    }
+
+    .nav-links .ham-login-button {
+        display: block;
+        margin-top: 20px;
+        font-size: 17px;
+        background: var(--button-color);
+        color: var(--text-light);
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: var(--transition);
+        visibility: visible;
+    }
+
+
+    .ham-login-name {
+        display: block;
+        margin-top: 20px;
+        font-size: 17px;
+        background: #4c682d;
+        color: var(--text-light);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: var(--transition);
+        visibility: visible;
+        text-align: center;
+    }
+    
+    .nav-links .ham-login-button:hover {
+        background: var(--button-hover);
+    }
+
+    .login-name {
+        display: none !important;
+    }
+
+    .ham-login-name {
+        display: none;
+    }
+
+    .nav-links .ham-logout-button {
+        display: block;
+        margin-top: 20px;
+        font-size: 17px;
+        background: var(--button-color);
+        color: var(--text-light);
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .nav-links .ham-logout-button:hover {
+        background: var(--button-hover);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+        
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}

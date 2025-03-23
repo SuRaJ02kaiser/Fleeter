@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FleetManagerPro - Login/Signup</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+    <div class="container">
+        <div id="login-form">
+            <h2>Welcome</h2>
+            <p>Log in to continue</p>
+            <div class="input-group">
+                <span>📧</span>
+                <input type="email" id="login-email" placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <span>🔒</span>
+                <input type="password" id="login-password" placeholder="Enter your password">
+            </div>
+            <div class="show-password">
+                <input type="checkbox" id="login-show-password" onclick="togglePassword('login-password')">
+                <label for="login-show-password">Show Password</label>
+            </div>
+            <button class="btn" onclick="logIn()">Login</button>
+            <div class="links">
+                <p>Don't have an account? <a onclick="toggleForm()">Sign up</a></p>
+            </div>
+        </div>
+        
+        <div id="signup-form" style="display: none;">
+            <h2>Create an Account</h2>
+            <p>Sign up to get started</p>
+            <div class="input-group">
+                <span>👤</span>
+                <input type="text" id="signup-name" placeholder="Enter your name">
+            </div>
+            <div class="input-group">
+                <span>📧</span>
+                <input type="email" id="signup-email" placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <span>🔒</span>
+                <input type="password" id="signup-password" placeholder="Create a password">
+            </div>
+            <div class="show-password">
+                <input type="checkbox" id="signup-show-password" onclick="togglePassword('signup-password')">
+                <label for="signup-show-password">Show Password</label>
+            </div>
+            <button class="btn" onclick="signUp()">Sign Up</button>
+            <div class="links">
+                <p>Already have an account? <a onclick="toggleForm()">Login</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

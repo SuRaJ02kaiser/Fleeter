@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Management</title>
+    <link rel="stylesheet" href="route.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD48WWoVjbckzHmGckXmMltWMaRunrcj0&libraries=places"></script>
+</head>
+<body>
+
+    <header class="route-header">
+        <div class="LOGO">
+            <a href="/Frontend/main_page/main.html">
+                <img src="/Frontend/images/new fleeter bg.PNG" alt="Logo">
+                <p>FLEETER</p>
+            </a>
+        </div>
+        <div class="header-content">
+            <h1>Route Management</h1>
+            <p>Plan and visualize your routes efficiently</p>
+        </div>
+        <button class="theme-toggle">
+            <i class="fas fa-moon"></i> 
+        </button>
+    </header>
+
+    <div class="hero-section">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        <div class="route-input-container">
+            <div class="input-group">
+                <label for="from">From:</label>
+                <input type="text" id="from" placeholder="Enter starting point" required>
+            </div>
+            <div class="input-group">
+                <label for="to">To:</label>
+                <input type="text" id="to" placeholder="Enter destination" required>
+            </div>
+            <div id="distance-info" class="distance-info"></div> 
+            <button onclick="showRoute()">Show Route</button>
+            <button onclick="startJourney()">Start Journey</button>
+            <div class="history-section">
+                <h3>Routes History</h3>
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a>Terms of Service</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>Investor Relations</a></li>
+                <li><a>Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Community</h3>
+            <ul>
+                <li><a>Services</a></li>
+                <li><a>Fleet Management</a></li>
+                <li><a>About</a></li>
+                <li><a>Our Plans</a></li>
+            </ul>
+        </div>
+        <div class="footer-section-contact-info">
+            <h3>Contact Info</h3>
+            <p><strong>Office Address:</strong> B-46, Ground Floor, Sector 69, Noida, Delhi 123456</p>
+            <p><strong>Email:</strong> info@fleeter.com</p>
+            <p><strong>Phone:</strong> 123456789 / 987654321</p>
+            <div class="icons">
+                <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="bottomLeft">
+            <p>© 2025 Fleeter, Inc.  • <a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Sitemap</a> • <a href="#">Company details</a></p>
+        </div>
+    </footer>
+
+    <script src="route.js"></script>
+</body>
+</html>

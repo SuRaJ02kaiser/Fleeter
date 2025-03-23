@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Management</title>
+    <link rel="stylesheet" href="driver.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="driver-header">
+        <div class="LOGO">
+            <a href="/Frontend/main_page/main.html">
+                <img src="/Frontend/images/new fleeter bg.PNG" alt="Logo">
+                <p>FLEETER</p>
+            </a>
+        </div>
+        <div class="header-content">
+            <h1>Driver Management</h1>
+            <p>Manage your drivers efficiently and effectively</p>
+        </div>
+        <button class="theme-toggle">
+            <i class="fas fa-moon"></i> 
+        </button>
+    </header>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" id="searchByName" placeholder="Search by name...">
+            <button onclick="searchByName()"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="search-bar">
+            <input type="number" id="searchByExp" placeholder="Search by experience...">
+            <button onclick="searchByExp()"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="status-selector">
+            <select id="searchByStatus" onchange="searchByStatus()">
+                <option value="">Select Status</option>
+                <option value="available">Available</option>
+                <option value="not available">Not Available</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="card-container" id="card-container"></div>
+
+    <div class="add-driver-button">
+        <button onclick="openAddDriverModal()">Add New Driver</button>
+    </div>
+
+
+    <div id="addDriverModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddDriverModal()">&times;</span>
+            <h2>Add New Driver</h2>
+            <form id="addDriverForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Driver Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Driver's Email" required>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" placeholder="Driver's Age" required>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="experience">Experience (years):</label>
+                        <input type="number" id="experience" name="experience" placeholder="Driver's Experience" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="from">From:</label>
+                        <input type="text" id="from" name="from" placeholder="Driver's Address" required>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="mobile">Mobile:</label>
+                        <input type="text" id="mobile" name="mobile" placeholder="Driver's mobile number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="canDrive">Can Drive:</label>
+                        <input type="text" id="canDrive" name="canDrive" placeholder="light,semi or heavy" required>
+                    </div>
+                </div>
+    
+                <button type="submit">Add Driver</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a>Terms of Service</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>Investor Relations</a></li>
+                <li><a>Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Community</h3>
+            <ul>
+                <li><a>Services</a></li>
+                <li><a>Fleet Management</a></li>
+                <li><a>About</a></li>
+                <li><a>Our Plans</a></li>
+            </ul>
+        </div>
+        <div class="footer-section-contact-info">
+            <h3>Contact Info</h3>
+            <p><strong>Office Address:</strong> B-46, Ground Floor, Sector 69, Noida, Delhi 123456</p>
+            <p><strong>Email:</strong> info@fleeter.com</p>
+            <p><strong>Phone:</strong> 123456789 / 987654321</p>
+            <div class="icons">
+                <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="bottomLeft">
+            <p>© 2025 Fleeter, Inc.  • <a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Sitemap</a> • <a href="#">Company details</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="driver.js"></script>
+</body>
+</html>

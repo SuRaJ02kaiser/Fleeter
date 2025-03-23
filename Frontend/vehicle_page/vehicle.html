@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Management</title>
+    <link rel="stylesheet" href="vehicle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="vehicle-header">
+        <div class="LOGO">
+            <a href="/Frontend/main_page/main.html">
+                <img src="/Frontend/images/new fleeter bg.PNG" alt="Logo">
+                <p>FLEETER</p>
+            </a>
+        </div>
+        <div class="header-content">
+            <h1>Vehicle Management</h1>
+            <p>Manage your vehicles efficiently and effectively</p>
+        </div>
+        <button class="theme-toggle">
+            <i class="fas fa-moon"></i> 
+        </button>
+    </header>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" id="searchByMake" placeholder="Search by make...">
+            <input type="text" id="searchByModel" placeholder="Search by model...">
+            <button onclick="searchByName()"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="search-bar">
+            <input type="number" id="searchByMileage" placeholder="Search by mileage...">
+            <button onclick="searchByMileage()"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="status-selector">
+            <select id="searchByStatus" onchange="searchByStatus()">
+                <option value="">Select Status</option>
+                <option value="active">Active</option>
+                <option value="maintenance">Maintenance</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="card-container" id="card-container"></div>
+
+    <div class="add-vehicle-button">
+        <button onclick="openAddVehicleModal()">Add New Vehicle</button>
+    </div>
+
+    <div id="addVehicleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddVehicleModal()">&times;</span>
+            <h2>Add New Vehicle</h2>
+            <form id="addVehicleForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="make">Make:</label>
+                        <input type="text" id="make" name="make" placeholder="Vehicle Make" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model:</label>
+                        <input type="text" id="model" name="model" placeholder="Vehicle Model" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="licensePlate">License Plate:</label>
+                        <input type="text" id="licensePlate" name="licensePlate" placeholder="License Plate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="manufacturingYear">Manufacturing Year:</label>
+                        <input type="number" id="manufacturingYear" name="manufacturingYear" placeholder="Year" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="type">Type:</label>
+                        <select id="type" name="type" required>
+                            <option value="light">Light</option>
+                            <option value="heavy">Heavy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mileage">Mileage:</label>
+                        <input type="number" id="mileage" name="mileage" placeholder="Mileage" required>
+                    </div>
+                </div>
+
+                <button type="submit">Add Vehicle</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a>Terms of Service</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>Investor Relations</a></li>
+                <li><a>Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Community</h3>
+            <ul>
+                <li><a>Services</a></li>
+                <li><a>Fleet Management</a></li>
+                <li><a>About</a></li>
+                <li><a>Our Plans</a></li>
+            </ul>
+        </div>
+        <div class="footer-section-contact-info">
+            <h3>Contact Info</h3>
+            <p><strong>Office Address:</strong> B-46, Ground Floor, Sector 69, Noida, Delhi 123456</p>
+            <p><strong>Email:</strong> info@fleeter.com</p>
+            <p><strong>Phone:</strong> 123456789 / 987654321</p>
+            <div class="icons">
+                <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="bottomLeft">
+            <p>© 2025 Fleeter, Inc.  • <a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Sitemap</a> • <a href="#">Company details</a></p>
+        </div>
+    </footer>
+
+    <script src="vehicle.js"></script>
+</body>
+</html>

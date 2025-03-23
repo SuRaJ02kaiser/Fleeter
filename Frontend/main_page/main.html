@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleeter - Fleet Management Made Easy</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="LOGO">
+            <img alt="Fleeter logo" class="logo" src="../images/new fleeter bg.PNG">
+            <p>FLEETER</p>
+        </div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <p class="ham-login-name"></p>
+                <button class="ham-login-button" onclick="window.location.href='/Frontend/login_signup/login.html'">
+                    Login
+                </button>
+                <button class="ham-logout-button">Logout</button>
+            </li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="login-name"></p>
+        <button class="login-button"><a href="/Frontend/login_signup/login.html">Login</a></button>
+        <button class="logout-button" style="display: none;">Logout</button>
+    </header>
+
+    <section class="hero">
+        <h1>Fleeter – Smarter Routes, Smoother Rides</h1>
+        <p>Drive Smarter, Manage Better – Fleeter: Your Road to Effortless Fleet Management</p>
+        <button onclick="getStarted()">Get Started</button>
+    </section>
+    
+    <section id="features" class="features section-animate">
+        <h2>Key Features</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <i class="fas fa-truck" onclick="takeToVehicles()"></i>
+                <h3 onclick="takeToVehicles()">Vehicle Management</h3>
+                <p onclick="takeToVehicles()">Efficiently track and manage your fleet vehicles.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-user-tie" onclick="takeToDrivers()"></i> 
+                <h3 onclick="takeToDrivers()">Driver Management</h3>
+                <p onclick="takeToDrivers()">Monitor and optimize driver performance.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-route" onclick="takeToRoutes()"></i> 
+                <h3 onclick="takeToRoutes()">Route Management</h3>
+                <p onclick="takeToRoutes()">Plan and optimize routes for maximum efficiency.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="about" class="about section-animate">
+        <h2>About Fleeter</h2>
+        <p class="tagline">Fleeter helps businesses streamline their transportation with powerful management tools.</p>
+        <div class="about-content">
+            <p>
+                Fleeter is a comprehensive fleet management system designed to simplify and optimize your transportation operations. 
+                With real-time tracking, advanced analytics, and intuitive tools, Fleeter empowers businesses to manage vehicles, 
+                monitor drivers, and optimize routes seamlessly. Whether you're a small business or a large enterprise, Fleeter 
+                provides the solutions you need to reduce costs, improve efficiency, and enhance overall productivity. 
+                Our mission is to make fleet management smarter, faster, and more reliable for businesses worldwide.
+            </p>
+        </div>
+    </section>
+
+    
+
+    <section id="testimonials" class="testimonials section-animate">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-list">
+
+            <div class="testimonial-item">
+                <div class="profile-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <p class="name">John Snow</p>
+                <p class="quote">"Fleeter has transformed our operations, making fleet tracking seamless!"</p>
+            </div>
+    
+            <div class="testimonial-item">
+                <div class="profile-icon">
+                    <i class="fas fa-user-circle"></i> 
+                </div>
+                <p class="name">Michael Kaiser</p>
+                <p class="quote">"A must-have for any logistics business looking to optimize routes and reduce costs."</p>
+            </div>
+    
+            <div class="testimonial-item">
+                <div class="profile-icon">
+                    <i class="fas fa-user-circle"></i> 
+                </div>
+                <p class="name">Mike Johnson</p>
+                <p class="quote">"The real-time tracking feature has saved us hours of manual work. Highly recommended!"</p>
+            </div>
+        </div>
+    </section>
+
+
+<section id="contact" class="contact section-animate">
+    <div class="container">
+        <div class="grid">
+            <div class="contact-info">
+                <div>
+                    <h1>Contact Information</h1>
+                    <p>For any query and Feedback</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-circle">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Hotline</h3>
+                        <p>7778885983 / 7011974492</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-circle">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Our Location</h3>
+                        <p>B 46, Ground Floor, Sector 69, Noida,</p>
+                        <p>UP 123456</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-circle">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Official Email</h3>
+                        <p>info@fleeter.in</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <div class="form-header">
+                    <p>HAVE QUESTIONS?</p>
+                    <h2>Send us a Massage</h2>
+                </div>
+
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name**" required>
+                    </div>
+                
+                    <div class="form-group form-row">
+                        <input type="email" id="email" placeholder="Email*" required>
+                        <input type="tel" id="phone" placeholder="Phone">
+                    </div>
+                
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" required></textarea>
+                    </div>
+                
+                    <div class="btn-container">
+                        <button class="btn" type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Send
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    <footer>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a>Terms of Service</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>Investor Relations</a></li>
+                <li><a>Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Community</h3>
+            <ul>
+                <li><a>Services</a></li>
+                <li><a>Fleet Management</a></li>
+                <li><a>About</a></li>
+                <li><a>Our Plans</a></li>
+            </ul>
+        </div>
+        <div class="footer-section-contact-info">
+            <h3>Contact Info</h3>
+            <p><strong>Office Address:</strong> B-46, Ground Floor, Sector 69, Noida, Delhi 123456</p>
+            <p><strong>Email:</strong> info@fleeter.com</p>
+            <p><strong>Phone:</strong> 123456789 / 987654321</p>
+            <div class="icons">
+            <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="bottomLeft">
+            <p style="color: white;">© 2025 Fleeter, Inc.  • <a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Sitemap</a> • <a href="#">Company details</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
