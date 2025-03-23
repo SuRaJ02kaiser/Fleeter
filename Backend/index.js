@@ -10,7 +10,7 @@ const routeRouter = require("./routes/route.route");
 
 app.use(cors({
   origin: ["https://fleet-er.netlify.app", "https://flee-ter.netlify.app"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
   credentials: true
 }));
 
