@@ -107,7 +107,7 @@ const updateUser = async(req,res) => {
 
 const getDriverByName = async (req, res) => {
     try {
-        const name = req.body.name.toLowerCase();
+        const name = req.params.name.toLowerCase();
 
         const drivers = await userModel.find({createdBy: req.user.userId});
 

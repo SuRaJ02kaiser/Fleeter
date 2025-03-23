@@ -10,6 +10,6 @@ userRouter.get("/drivers",authMiddleware(["admin","manager"]),getDrivers);//for 
 userRouter.post("/createDriver",authMiddleware(["manager","admin"]),createDriver)//for creating drive
 userRouter.delete("/deleteDriver/:id",authMiddleware(["admin",'manager']),deleteDriver)//to delete a driver
 userRouter.patch("/updateDriver/:id",authMiddleware(["admin","manager"]),updateUser);//updating the user info
-userRouter.get("/getDriverByName",authMiddleware(["admin","manager"]),getDriverByName)//get Driver by name
+userRouter.get("/getDriverByName/:name",authMiddleware(["admin","manager"]),getDriverByName)//get Driver by name
 
 module.exports = userRouter;
