@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".nav-links a");
 
+
     navLinks.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    
     const sections = document.querySelectorAll(".section-animate");
 
     const checkVisibility = () => {
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 const getStarted = async () => {
     const getToken = localStorage.getItem('fleeterToken');
     if(getToken){
@@ -65,6 +68,7 @@ const getStarted = async () => {
        window.location.href='/login_signup/login.html';
     }
 }
+
 
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -142,6 +146,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
+
 document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -162,6 +167,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
 });
 
 
+
 function takeToDrivers(){
     const getToken = localStorage.getItem('fleeterToken');
     if(getToken){
@@ -180,6 +186,7 @@ function takeToVehicles(){
        window.location.href='/login_signup/login.html';
     }
 }
+
 
 
 function takeToRoutes(){
